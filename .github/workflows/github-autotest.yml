@@ -6,6 +6,8 @@ on:
 jobs:
   base-test:
     runs-on: ubuntu-latest
+    outputs:
+       points: ${{ steps.tester.outputs.points}}
     container:
         image: duskmoon/dev-env:ucore-ci
     steps:
