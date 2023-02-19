@@ -13,9 +13,6 @@ docker:
 	docker pull nzpznk/oslab-c-env
 	docker run -it --name ${DOCKER_NAME} ${DOCKER_IMAGE_NAME} /bin/bash
 
-
-
-
 # for local ubuntu with zsh shell SHELL, need root for sudo 
 ubuntu_setenv:
 	cd ${HOME} && sudo wget https://static.dev.sifive.com/dev-tools/freedom-tools/v2020.08/riscv64-unknown-elf-gcc-10.1.0-2020.08.2-x86_64-linux-ubuntu14.tar.gz
@@ -23,9 +20,6 @@ ubuntu_setenv:
 	cd ${HOME} && sudo mv riscv64-unknown-elf-gcc-10.1.0-2020.08.2-x86_64-linux-ubuntu14 riscv64-unknown-elf-gcc
 	cd ${HOME} && sudo wget -O riscv64-linux-musl-cross.tgz https://musl.cc/riscv64-linux-musl-cross.tgz 
 	cd ${HOME} && sudo tar xzf riscv64-linux-musl-cross.tgz
-	#sudo echo export PATH=\"\$$HOME/riscv64-unknown-elf-gcc/bin:\$$PATH\" >>  ~/.bashrc
-	#sudo echo export PATH=\"\$$HOME/riscv64-linux-musl-cross/bin:\$$PATH\" >> ~/.bashrc
-	#source ~/.bashrc  
 	sudo ln -s $$HOME/riscv64-unknown-elf-gcc/bin/* /usr/bin/
 	sudo ln -s $$HOME/riscv64-linux-musl-cross/bin/* /usr/bin/
 	sudo apt install -y cmake
@@ -53,10 +47,7 @@ codespaces_setenv:
 	cd ${HOME} && sudo tar xzf riscv64-unknown-elf-gcc-10.1.0-2020.08.2-x86_64-linux-ubuntu14.tar.gz
 	cd ${HOME} && sudo mv riscv64-unknown-elf-gcc-10.1.0-2020.08.2-x86_64-linux-ubuntu14 riscv64-unknown-elf-gcc
 	cd ${HOME} && sudo wget -O riscv64-linux-musl-cross.tgz https://musl.cc/riscv64-linux-musl-cross.tgz 
-	cd ${HOME} && sudo tar xzf riscv64-linux-musl-cross.tgz
-	#sudo echo export PATH=\"\$$HOME/riscv64-unknown-elf-gcc/bin:\$$PATH\" >>  ~/.bashrc
-	#sudo echo export PATH=\"\$$HOME/riscv64-linux-musl-cross/bin:\$$PATH\" >> ~/.bashrc
-	#source ~/.bashrc  
+	cd ${HOME} && sudo tar xzf riscv64-linux-musl-cross.tgz 
 	sudo ln -s $$HOME/riscv64-unknown-elf-gcc/bin/* /usr/bin/
 	sudo ln -s $$HOME/riscv64-linux-musl-cross/bin/* /usr/bin/
 	sudo apt install -y cmake
